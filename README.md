@@ -520,21 +520,6 @@ before inference.
 
 ---
 
-# Training EchoNet (Optional)
-
-Most users do **NOT** need this.
-
-If you already have:
-
-```text
-r2plus1d_18_32_2_pretrained.pt
-deeplabv3_resnet50_random.pt
-```
-
-training is unnecessary.
-
----
-
 ## Train Segmentation Model
 
 ```bash
@@ -575,29 +560,6 @@ Several hours
 
 ---
 
-# Testing Installation
-
-Verify EchoNet:
-
-```bash
-python -c "import echonet"
-```
-
-Verify PyTorch:
-
-```bash
-python -c "import torch; print(torch.__version__)"
-```
-
-Verify GPU:
-
-```bash
-python -c "import torch; print(torch.cuda.is_available())"
-```
-
----
-
-# Common Issues
 
 # Data Sources
 
@@ -636,60 +598,7 @@ Purpose:
 Dataset:
 
 https://physionet.org/content/heart-failure-zigong/1.3/
-## Matplotlib Installation Error
 
-If installation fails because of:
-
-```text
-SafeConfigParser
-```
-
-or
-
-```text
-matplotlib==3.3.4
-```
-
-then avoid the original EchoNet requirements file and install modern packages instead.
-
----
-
-## EchoNet Cannot Be Imported
-
-Run:
-
-```bash
-pip install -e dynamic
-```
-
----
-
-## Checkpoint Not Found
-
-Verify:
-
-```text
-weights/
-
-├── r2plus1d_18_32_2_pretrained.pt
-└── deeplabv3_resnet50_random.pt
-```
-
-exist.
-
----
-
-## Wrong EchoNet Version Loaded
-
-Run:
-
-```python
-import echonet
-import inspect
-
-print(echonet.__file__)
-print(inspect.signature(echonet.datasets.Echo.__init__))
-```
 
 ---
 
