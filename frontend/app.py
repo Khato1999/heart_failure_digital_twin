@@ -14,10 +14,10 @@ ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
 sys.path.insert(0, str(ROOT / "vendor" / "echonet_dynamic"))
 
-from backend.echonet_integration import infer_ef_from_video, infer_volumes_from_segmentation  # noqa: E402
-from backend.imaging import ImagingError, convert_dicom_to_avi, inspect_video, preview_frame_png  # noqa: E402
-from backend.patient import PatientInputError, PatientProfile  # noqa: E402
-from backend.twin import ScenarioControls, TwinComparison, run_twin  # noqa: E402
+from backend.heart_twin.echonet_integration import infer_ef_from_video, infer_volumes_from_segmentation  # noqa: E402
+from backend.heart_twin.imaging import ImagingError, convert_dicom_to_avi, inspect_video, preview_frame_png  # noqa: E402
+from backend.heart_twin.patient import PatientInputError, PatientProfile  # noqa: E402
+from backend.heart_twin import ScenarioControls, TwinComparison, run_twin  # noqa: E402
 
 
 st.set_page_config(page_title="Heart failure digital twin", page_icon=":material/favorite:", layout="wide")
